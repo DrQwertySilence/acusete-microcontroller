@@ -13,14 +13,16 @@ void loop(void) {
   float temperature = getTemp();
   int ppm = analogRead(MQ_4_APIN);
   
-  Serial.println(temperature);
-  Serial.println(ppm);
+  Serial.print(ppm);
+  Serial.print(" ");
+  Serial.print(temperature);
+  Serial.print('\n');
+    
+//  if(temperature < 35 && ppm > 400) {
+//    digitalWrite(LED_DPIN, HIGH);
+//  }
   
-  if(temperature < 35 && ppm > 400) {
-    digitalWrite(LED_DPIN, HIGH);
-  }
-  
-  delay(250);
+  delay(100);
 }
 
 float getTemp(){
